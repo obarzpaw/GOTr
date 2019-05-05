@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="1sp"
+>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars[0]"
+            android:id="@+id/iv_characterGrid"
+            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="16dp"
+    />
+    <TextView
+            android:text="TextView"
+            android:textColor="#E1E7E4"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_characterNameGrid"
+            app:layout_constraintTop_toBottomOf="@+id/iv_characterGrid"
+            app:layout_constraintEnd_toEndOf="@+id/iv_characterGrid"
+            app:layout_constraintStart_toStartOf="@+id/iv_characterGrid"
+    />
+</android.support.constraint.ConstraintLayout>

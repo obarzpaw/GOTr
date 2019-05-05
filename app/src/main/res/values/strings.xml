@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GOTr</string>
+    <string name="action_roll_description">Click to roll random character</string>
+</resources>

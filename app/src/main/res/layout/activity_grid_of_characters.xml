@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:http="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GridOfCharacters"
+        android:background="#000000"
+>
+    <ScrollView
+            android:id="@+id/sv_charactersScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+        <GridLayout
+                android:id="@+id/gl_charactersGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="2"
+                android:rowCount="4"
+                android:useDefaultMargins="true"
+        >
+
+            <!--Inflate in runtime-->
+
+        </GridLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>
