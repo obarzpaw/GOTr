@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlinx-serialization'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -36,4 +38,5 @@ dependencies {
     implementation 'com.koushikdutta.ion:ion:2.+'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.11.0"
 }
