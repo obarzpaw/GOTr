@@ -18,44 +18,6 @@ import kotlinx.serialization.parse
 import org.json.JSONObject
 import java.util.*
 
-
-@Serializable
-data class Data_1 (
-    val __v: Int,
-    val _id: String,
-    val actor: String,
-    //val age: Age,
-    val alive: Boolean,
-    val allegiances: List<String>,
-    val appearances: List<String>,
-    val createdAt: String,
-    val culture: List<String>,
-    val first_seen: String,
-    val gender: String,
-    val house: String,
-    val id: String,
-    val image: String,
-    val longevity: List<Any>,
-    val longevityB: List<Double>,
-    val longevityC: List<Any>,
-    val longevityStartB: Int,
-    val lovers: List<Any>,
-    val name: String,
-    val origin: List<String>,
-    //val pagerank: Pagerank,
-    val plod: Int,
-    val plodB: Double,
-    val plodC: Int,
-    //val related: List<Related>,
-    val religion: List<String>,
-    val seasons: List<Any>,
-    val siblings: List<Any>,
-    val slug: String,
-    val spouse: List<Any>,
-    val titles: List<String>,
-    val updatedAt: String
-)
-
 class GridOfCharacters :  AppCompatActivity() {
     private var _screenWidth : Int = 0
     private var _screenHeight : Int = 0
