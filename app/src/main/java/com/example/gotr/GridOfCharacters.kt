@@ -17,6 +17,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.parse
 import org.json.JSONObject
 import java.util.*
+import kotlin.collections.ArrayList
 
 class GridOfCharacters :  AppCompatActivity() {
     private var _screenWidth : Int = 0
@@ -50,6 +51,15 @@ class GridOfCharacters :  AppCompatActivity() {
         for (character in _characterRotation) {
             postForJsonData(character)
         }
+
+        downloadGridData()
+
+    }
+
+    private fun downloadGridData() {
+        val intent = Intent(this, GotAPIService::class.java)
+        intent.action = "grid_character"
+        startService(intent)
     }
 
     private fun postForJsonData(character: String){
@@ -59,7 +69,7 @@ class GridOfCharacters :  AppCompatActivity() {
             .setCallback { _, result ->
                 processData(result)
                 @UseExperimental(kotlinx.serialization.ImplicitReflectionSerializer::class)
-                val test = Json.nonstrict.parse<Data>(result)
+                val test = Json.nonstrict.parse<JsonData>(result)
                 Log.i("GOCh", "Received Data: \n $test")
             }
     }

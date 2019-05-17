@@ -11,17 +11,20 @@
             android:roundIcon="@mipmap/gotr_icon"
             android:supportsRtl="true"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        <service
+                android:name=".GotAPIService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
 
         <activity android:name=".GridOfCharacters">
         </activity>
         <activity
                 android:name=".CharacterActivity"
-                android:parentActivityName=".GridOfCharacters"
-        >
+                android:parentActivityName=".GridOfCharacters">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".GridOfCharacters"
-            />
+                    android:value=".GridOfCharacters"/>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
