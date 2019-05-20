@@ -28,8 +28,9 @@ class GotAPIService : Service() {
 
             if (intent.action == "single_character") {
                 postForJsonData(_allCharacters.random())
+                Log.i("GAS", "Received Request for single character data")
             } else if (intent.action == "grid_character") {
-                Log.d("Paweo", "I'm here")
+                Log.i("GAS", "Received Request for multiple characters data")
                 fillCharacterList()
             }
         }
@@ -45,15 +46,14 @@ class GotAPIService : Service() {
     private fun fillCharacterList() {
         _gridOfCharacters.clear()
         postForJsonDataGrid()
-        Log.d("PAWEO", "im' done")
     }
 
     private fun broadcastGrid() {
-
-        val data = _gridOfCharacters as Parcelable
+        Log.i("GAS", "Broadcast array of Characters")
+        val data = _gridOfCharacters
         val doneIntent = Intent()
         doneIntent.action = "send_grid_character"
-        doneIntent.putExtra("characterData", data)
+        doneIntent.putParcelableArrayListExtra("characterData", _gridOfCharacters)
         sendBroadcast(doneIntent)
     }
 
@@ -83,7 +83,7 @@ class GotAPIService : Service() {
                 _gridOfCharacters.add(tmpData)
 
                 postForJsonDataGrid()
-                Log.d("GAS", "Received Data: \n ${_gridOfCharacters[_gridOfCharacters.size - 1]}")
+                Log.i("GAS", "Received Data: \n ${_gridOfCharacters[_gridOfCharacters.size - 1]}")
             }
     }
 
