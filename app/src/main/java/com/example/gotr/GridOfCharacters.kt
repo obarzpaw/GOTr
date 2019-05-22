@@ -40,7 +40,23 @@ class GridOfCharacters :  AppCompatActivity() {
 
         loadGrid()
         downloadGridData()
+    }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        outState!!.putParcelableArrayList("saved_characters_grid", _characterRotation)
+
+        Log.i("GOCh", "Save instance")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        _characterRotation = savedInstanceState?.getParcelableArrayList<JsonData>("saved_characters_grid")
+            ?: _characterRotation
+
+        updateGridData()
     }
 
     private inner class ReceiverGotAPIService : BroadcastReceiver() {
@@ -57,6 +73,14 @@ class GridOfCharacters :  AppCompatActivity() {
         intent.action = "grid_character"
         startService(intent)
     }
+
+    private fun refreshGridData() {
+        Log.i("GOCh", "Refresh  character data")
+        val intent = Intent(this, GotAPIService::class.java)
+        intent.action = "refresh_grid_characters"
+        startService(intent)
+    }
+
 
     private fun updateGridData() {
         _characterRotation.forEachIndexed { index, character ->
@@ -78,9 +102,8 @@ class GridOfCharacters :  AppCompatActivity() {
         _swipeLayout = findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh)
         _swipeLayout.setOnRefreshListener {
             gl_charactersGrid.removeAllViews()
-            downloadGridData()
+            refreshGridData()
         }
-
     }
 
     private fun updateImage(url : String, index: Int) {
@@ -115,5 +138,4 @@ class GridOfCharacters :  AppCompatActivity() {
 
         Log.i("GOCh", "updateName name: $name")
     }
-
 }

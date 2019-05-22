@@ -27,14 +27,22 @@ class GotAPIService : Service() {
         if (intent != null ) {
 
             if (intent.action == "single_character") {
+
                 postForJsonData(_allCharacters.random())
                 Log.i("GAS", "Received Request for single character data")
+
             } else if (intent.action == "grid_character") {
+
                 Log.i("GAS", "Received Request for multiple characters data")
+                if (_gridOfCharacters.isEmpty())
+                    fillCharacterList()
+                else
+                    broadcastGrid()
+
+            } else if (intent.action == "refresh_grid_characters") {
                 fillCharacterList()
             }
         }
-
         return START_STICKY
 
     }
