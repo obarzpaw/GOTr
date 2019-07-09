@@ -42,6 +42,12 @@ class GridOfCharacters :  AppCompatActivity() {
         downloadGridData()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+
+    }
+
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
 
@@ -68,6 +74,7 @@ class GridOfCharacters :  AppCompatActivity() {
     }
 
     private fun downloadGridData() {
+        Log.d("Thread", "${Thread.currentThread()} Grid")
         Log.i("GOCh", "Requested for characters data")
         val intent = Intent(this, GotAPIService::class.java)
         intent.action = "grid_character"

@@ -15,6 +15,8 @@ import com.example.gotr.R.layout.character_layout
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character.*
 
+//TODO aktualizowac dane dla nowego layout'u
+
 class CharacterActivity : AppCompatActivity() {
     private val NO_IMAGE_URL = "https://is.tuebingen.mpg.de/assets/noEmployeeImage_md-eaa7c21cc21b1943d77e51ab00a5ebe9.png"
     private var _character : JsonData = JsonData()
@@ -81,7 +83,7 @@ class CharacterActivity : AppCompatActivity() {
     private fun updateCharacterData(character: JsonData) {
         updateName(character.name)
         updateImage(character.image)
-        updateInfo(character.gender, "0", character.culture[0])
+        updateInfo(character.gender, character.age["age"]?: "n/a", character.culture[0])
     }
 
     private fun updateImage(url : String) {
@@ -93,7 +95,7 @@ class CharacterActivity : AppCompatActivity() {
 
     Picasso.get()
         .load(tmpURL)
-        .resize(300,400)
+        .resize(150,200)
         .centerCrop()
         .into(imageView)
 

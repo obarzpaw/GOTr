@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--TODO -->
+<!-- - Dodac liste dla elementow zamiast textview-->
+<!-- - sformatowac tekst, dobrac czcionke itp.-->
+
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,45 +12,80 @@
         android:layout_height="match_parent"
         android:background="#000000"
 >
+
+    <ImageView
+            android:layout_width="150sp"
+            android:layout_height="200sp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/iv_character"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+    />
+
     <TextView
             android:text=""
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tv_characterName"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#E1E7E4"
-            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintLeft_toRightOf="@id/iv_character"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/iv_character"
 
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
     />
-    <ImageView
-            android:layout_width="300sp"
-            android:layout_height="400sp"
-            tools:srcCompat="@tools:sample/avatars"
-            android:id="@+id/iv_character"
-            app:layout_constraintLeft_toLeftOf="parent"
+
+    <TextView
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/actor"
+            android:textSize="20sp"
+            android:textStyle=""
+            android:textColor="#E1E7E4"
+
+            app:layout_constraintLeft_toRightOf="@id/iv_character"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_characterName"
-            app:layout_constraintBottom_toTopOf="@id/ly_text_views"
 
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
     />
-    <GridLayout
+
+    <TextView
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_culture"
+            android:textSize="20sp"
+            android:textStyle=""
+            android:textColor="#E1E7E4"
+
+            app:layout_constraintLeft_toRightOf="@id/iv_character"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actor"
+
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+    />
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/ly_text_views"
-            android:columnCount="3"
-            android:rowCount="2"
-            android:orientation="horizontal"
-            android:gravity="center"
+
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_character"
@@ -54,69 +94,438 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
     >
-        <TextView
-                android:text="Gender:"
-                android:id="@+id/textView2"
-                android:textColor="#E1E7E4"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-        />
-        <TextView
-                android:text=""
-                android:id="@+id/tv_gender"
-                android:textColor="#E1E7E4"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-        />
 
-        <TextView
-                android:text="Age:"
-                android:id="@+id/textView4"
-                android:textColor="#E1E7E4"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
+        <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ly_text_views"
+                android:columnCount="2"
+                android:rowCount="15"
+                android:orientation="horizontal"
                 android:gravity="center"
-        />
-        <TextView
-                android:text=""
-                android:id="@+id/tv_age"
-                android:textColor="#E1E7E4"
-                android:layout_row="1"
-                android:layout_column="1"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-        />
+        >
+            <TextView
+                    android:text="Brith"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
 
-        <TextView
-                android:text="Culture:"
-                android:id="@+id/textView6"
-                android:textColor="#E1E7E4"
-                android:layout_row="0"
-                android:layout_column="2"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
-        />
-        <TextView
-                android:text=""
-                android:id="@+id/tv_culture"
-                android:textColor="#E1E7E4"
-                android:layout_row="1"
-                android:layout_column="2"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:gravity="center"
+            <TextView
+                    android:id="@+id/birth"
+                    android:text="289"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
 
-        />
-    </GridLayout>
+            <TextView
+                    android:text="Age"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/age"
+                    android:text="33"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Alive"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/alive"
+                    android:text="Yes"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Father"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/father"
+                    android:text="Rhaegar Targaryen"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="3"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Mother"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/mother"
+                    android:text="Lyanna Stark"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="4"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="House"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="5"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/house"
+                    android:text="House Stark"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="5"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Titles"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="6"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/titles"
+                    android:text="King in the North"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="6"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Origin"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="7"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+
+            <TextView
+                    android:id="@+id/origin"
+                    android:text="Tower of Joy"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="7"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Siblings"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="8"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/siblings"
+                    android:text="Rhaenys Targaryen"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="8"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Spouse"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="9"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/spouse"
+                    android:text="Spouse"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="9"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Lovers"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="10"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/lovers"
+                    android:text="Daenerys Targaryen"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="10"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Culture"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="11"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/culture"
+                    android:text="Northmen"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="11"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Religion"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="12"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/religion"
+                    android:text="Old Gods of the Forest"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="12"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+
+            <TextView
+                    android:text="Allegiances"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="13"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/allegiances"
+                    android:text="House Targaryen"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="13"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:text="Seasons"
+                    android:textColor="#E1E7E4"
+                    android:layout_row="14"
+                    android:layout_column="0"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+            <TextView
+                    android:id="@+id/seasons"
+                    android:text=""
+                    android:textColor="#E1E7E4"
+                    android:layout_row="14"
+                    android:layout_column="1"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+            />
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_age"
+            android:textSize="16sp"
+            android:textStyle=""
+            android:textColor="#E1E7E4"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_character"
+
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+
+    />
+
+    <!--<GridLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/ly_text_views"-->
+            <!--android:columnCount="3"-->
+            <!--android:rowCount="2"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/iv_character"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+    <!--&gt;-->
+        <!--<TextView-->
+                <!--android:text="Gender:"-->
+                <!--android:id="@+id/textView2"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="0"-->
+                <!--android:layout_column="0"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+        <!--/>-->
+        <!--<TextView-->
+                <!--android:text=""-->
+                <!--android:id="@+id/tv_gender"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="1"-->
+                <!--android:layout_column="0"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+        <!--/>-->
+
+        <!--<TextView-->
+                <!--android:text="Age:"-->
+                <!--android:id="@+id/textView4"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="0"-->
+                <!--android:layout_column="1"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+        <!--/>-->
+        <!--<TextView-->
+                <!--android:text=""-->
+                <!--android:id="@+id/tv_age1"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="1"-->
+                <!--android:layout_column="1"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+        <!--/>-->
+
+        <!--<TextView-->
+                <!--android:text="Culture:"-->
+                <!--android:id="@+id/textView6"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="0"-->
+                <!--android:layout_column="2"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+        <!--/>-->
+        <!--<TextView-->
+                <!--android:text=""-->
+                <!--android:id="@+id/tv_culture1"-->
+                <!--android:textColor="#E1E7E4"-->
+                <!--android:layout_row="1"-->
+                <!--android:layout_column="2"-->
+                <!--android:layout_rowWeight="1"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:gravity="center"-->
+
+        <!--/>-->
+    <!--</GridLayout>-->
 </android.support.constraint.ConstraintLayout>

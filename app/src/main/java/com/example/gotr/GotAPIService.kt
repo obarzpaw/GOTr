@@ -19,32 +19,34 @@ class GotAPIService : Service() {
     var _gridOfCharacters : ArrayList<JsonData> = arrayListOf<JsonData>()
 
     override fun onCreate() {
+        //TODO check whether file isn't load
         val reader = Scanner(resources.openRawResource(R.raw.got_characters))
         readFromFile(reader)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent != null ) {
+            Thread (Runnable {
+                Log.d("Thread", "${Thread.currentThread()} service")
+                if (intent.action == "single_character") {
 
-            if (intent.action == "single_character") {
+                    postForJsonData(_allCharacters.random())
+                    Log.i("GAS", "Received Request for single character data")
 
-                postForJsonData(_allCharacters.random())
-                Log.i("GAS", "Received Request for single character data")
+                } else if (intent.action == "grid_character") {
 
-            } else if (intent.action == "grid_character") {
+                    Log.i("GAS", "Received Request for multiple characters data")
+                    if (_gridOfCharacters.isEmpty())
+                        fillCharacterList()
+                    else
+                        broadcastGrid()
 
-                Log.i("GAS", "Received Request for multiple characters data")
-                if (_gridOfCharacters.isEmpty())
+                } else if (intent.action == "refresh_grid_characters") {
                     fillCharacterList()
-                else
-                    broadcastGrid()
-
-            } else if (intent.action == "refresh_grid_characters") {
-                fillCharacterList()
-            }
+                }
+            }).start()
         }
         return START_STICKY
-
     }
 
     override fun onBind(intent: Intent): IBinder {
