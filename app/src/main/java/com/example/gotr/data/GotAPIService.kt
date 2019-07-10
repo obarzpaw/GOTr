@@ -1,15 +1,15 @@
-package com.example.gotr
+package com.example.gotr.data
 
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.os.Parcelable
 import android.util.Log
+import com.example.gotr.JsonData
+import com.example.gotr.R
 import com.koushikdutta.ion.Ion
-import kotlinx.serialization.Serializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.parse
-import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
 

@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.gotr.data.GotAPIService
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_grid_of_characters.*
 import kotlin.collections.ArrayList

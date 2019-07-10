@@ -12,12 +12,14 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.gotr.R.layout.character_layout
+import com.example.gotr.data.GotAPIService
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character.*
 
 //TODO aktualizowac dane dla nowego layout'u
 
 class CharacterActivity : AppCompatActivity() {
+
     private val NO_IMAGE_URL = "https://is.tuebingen.mpg.de/assets/noEmployeeImage_md-eaa7c21cc21b1943d77e51ab00a5ebe9.png"
     private var _character : JsonData = JsonData()
 
@@ -110,11 +112,11 @@ class CharacterActivity : AppCompatActivity() {
     }
 
     private fun updateInfo(gender: String, age: String, culture: String)  {
-        val textViewGender = findViewById<TextView>(R.id.tv_gender)
+        //val textViewGender = findViewById<TextView>(R.id.tv_gender)
         val textViewCulture = findViewById<TextView>(R.id.tv_culture)
         val textViewAge = findViewById<TextView>(R.id.tv_age)
 
-        textViewGender.text = gender
+        //textViewGender.text = gender
         textViewCulture.text = culture
         textViewAge.text = age
 
