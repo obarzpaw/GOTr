@@ -1,4 +1,4 @@
-package com.example.gotr
+package com.example.gotr.data
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 import kotlinx.serialization.Serializable
@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class JsonData (
+data class Character (
     val titles : List<String> = listOf(
         "Warden",
         "King in the North",

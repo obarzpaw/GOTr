@@ -12,7 +12,8 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.gotr.R.layout.character_layout
-import com.example.gotr.data.GotAPIService
+import com.example.gotr.data.source.remote.GotAPIService
+import com.example.gotr.data.JsonData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character.*
 
