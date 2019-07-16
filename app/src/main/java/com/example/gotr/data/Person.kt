@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class Character (
+data class Person (
     val titles : List<String> = listOf(
         "Warden",
         "King in the North",
