@@ -12,7 +12,7 @@
             android:supportsRtl="true"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         <service
-                android:name=".data.source.remote.GotAPIService"
+                android:name=".data.source.remote.GotAPIService123"
                 android:enabled="true"
                 android:exported="true">
         </service>

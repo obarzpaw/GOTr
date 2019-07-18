@@ -16,11 +16,11 @@ class PersonRepository (
     override fun getPerson(callback: PersonDataSource.GetPersonCallback) {
         personRemoteDataSource.getPerson(object : PersonDataSource.GetPersonCallback{
             override fun onPersonLoaded(person: Person) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                callback.onPersonLoaded(person)
             }
 
             override fun onDataNotAvailable() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                callback.onDataNotAvailable()
             }
         })
     }
@@ -37,11 +37,11 @@ class PersonRepository (
     private fun getPeopleFromRemoteDataSource(callback: PersonDataSource.GetPeopleCallback) {
         personRemoteDataSource.getPeople(object : PersonDataSource.GetPeopleCallback {
             override fun onPeopleLoaded(people: List<Person>) {
-                TODO("not implcemented") //To change body of created functions use File | Settings | File Templates.
+                callback.onPeopleLoaded(people)
             }
 
             override fun onDataNotAvailable() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                callback.onDataNotAvailable()
             }
         })
     }

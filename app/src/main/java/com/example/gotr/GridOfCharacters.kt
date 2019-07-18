@@ -12,7 +12,6 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.gotr.data.source.remote.GotAPIService
 import com.example.gotr.data.JsonData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_grid_of_characters.*
@@ -78,14 +77,14 @@ class GridOfCharacters :  AppCompatActivity() {
     private fun downloadGridData() {
         Log.d("Thread", "${Thread.currentThread()} Grid")
         Log.i("GOCh", "Requested for characters data")
-        val intent = Intent(this, GotAPIService::class.java)
+        val intent = Intent(this, GotAPIService123::class.java)
         intent.action = "grid_character"
         startService(intent)
     }
 
     private fun refreshGridData() {
         Log.i("GOCh", "Refresh  character data")
-        val intent = Intent(this, GotAPIService::class.java)
+        val intent = Intent(this, GotAPIService123::class.java)
         intent.action = "refresh_grid_characters"
         startService(intent)
     }
