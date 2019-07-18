@@ -1,6 +1,7 @@
 package com.example.gotr.data.source.remote
 
-import android.app.Person
+
+import com.example.gotr.data.Person
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
