@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
 >
-    <!-- "Roll new person", should appear on the person activity-->
+    <!-- "Roll new character", should appear on the character activity-->
     <item
             android:id="@+id/action_random_character"
             android:icon="@drawable/roll_dice_icon"

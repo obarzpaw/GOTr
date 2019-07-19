@@ -1,4 +1,4 @@
-package com.example.gotr
+package com.example.gotr.ui.grid
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -12,7 +12,9 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.gotr.R
 import com.example.gotr.data.JsonData
+import com.example.gotr.ui.character.CharacterActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_grid_of_characters.*
 import kotlin.collections.ArrayList

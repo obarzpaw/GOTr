@@ -1,9 +1,8 @@
-package com.example.gotr
+package com.example.gotr.ui.character
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.gotr.R
 import com.example.gotr.R.layout.character_layout
 import com.example.gotr.data.JsonData
 import com.squareup.picasso.Picasso
@@ -20,18 +20,13 @@ import kotlinx.android.synthetic.main.activity_character.*
 
 class CharacterActivity : AppCompatActivity() {
 
-    private val NO_IMAGE_URL = "https://is.tuebingen.mpg.de/assets/noEmployeeImage_md-eaa7c21cc21b1943d77e51ab00a5ebe9.png"
-    private var _character : JsonData = JsonData()
+    private lateinit var viewModel: CharacterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_character)
 
-        val filter = IntentFilter()
-        filter.addAction("send_single_character")
-        registerReceiver(ReceiverGotAPIService(), filter)
-
-        createNewCharacter()
+        setupCharacter()
 
         val characterData = intent.getParcelableExtra<JsonData>("characterData")
         if(characterData == null) {
@@ -75,7 +70,7 @@ class CharacterActivity : AppCompatActivity() {
         downloadCharacter()
     }
 
-    private fun createNewCharacter() {
+    private fun setupCharacter() {
         layoutInflater.inflate(
             character_layout,
             at_character

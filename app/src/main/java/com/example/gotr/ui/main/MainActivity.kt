@@ -1,9 +1,11 @@
-package com.example.gotr
+package com.example.gotr.ui.main
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.gotr.R
+import com.example.gotr.ui.grid.GridOfCharacters
 
 class MainActivity : AppCompatActivity() {
 

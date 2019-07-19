@@ -17,16 +17,16 @@
                 android:exported="true">
         </service>
 
-        <activity android:name=".GridOfCharacters">
+        <activity android:name=".ui.grid.GridOfCharacters">
         </activity>
         <activity
-                android:name=".CharacterActivity"
-                android:parentActivityName=".GridOfCharacters">
+                android:name=".ui.character.CharacterActivity"
+                android:parentActivityName=".ui.grid.GridOfCharacters">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".GridOfCharacters"/>
+                    android:value=".ui.grid.GridOfCharacters"/>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
