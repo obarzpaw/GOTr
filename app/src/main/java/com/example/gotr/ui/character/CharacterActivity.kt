@@ -1,5 +1,6 @@
 package com.example.gotr.ui.character
 
+import android.arch.lifecycle.ViewModelProvider
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_character.*
 
 class CharacterActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: CharacterViewModel
+    private var viewModel: CharacterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,8 @@ class CharacterActivity : AppCompatActivity() {
             _character = characterData
             updateCharacterData(_character)
         }
+
+        val model = ViewModelProviders.of(this)
 
     }
 
